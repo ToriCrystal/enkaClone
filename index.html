@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="./public/js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      var navbar = document.getElementById('navbar');
+      if (window.scrollY > 0) {
+        navbar.classList.add('navbar-scroll');
+      } else {
+        navbar.classList.remove('navbar-scroll');
+      }
+    });
+
+    let activeItem = null;
+
+    function toggleCircle(element) {
+      if (activeItem) {
+        activeItem.classList.remove('active');
+      }
+
+      if (activeItem !== element) {
+        element.classList.add('active');
+        activeItem = element;
+      } else {
+        activeItem = null;
+      }
+    }
+
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
